@@ -28,11 +28,13 @@ th {
 }
 
 table tbody tr.hover:hover {
-	background-color: #bcffd3;
+	background-color: #363736;
+		color: #ffffff;
 	border: 1px solid #07842a;
 	cursor: pointer;
-	transform: scale(1.04);
+	transform: scale(1.05);
 	transition: all 0.2s ease;
+
 }
 
 .paddingBackgroundColor0 {
@@ -104,8 +106,8 @@ table tbody tr.hover:hover {
 	background-color: #e6ffea;
 	color: #080808;
 
-
 }
+
 
 
 
@@ -114,8 +116,8 @@ table tbody tr.hover:hover {
 	background-color: #f2ff02;
 	color: #080808;
 
-
 }
+
 
 .button--eliminar {
 
@@ -130,19 +132,18 @@ table tbody tr.hover:hover {
 	width: 100%;
 	border-collapse: collapse;
 
-
 }
+
 
 .table__header,
 .table_body {
 	border: 1px solid #07842a;
 	padding: 8px;
+	
+}
+.table__header{
+text-align:center ;
+
 }
 
 
-.table__body {
-	background-color: #d3efdaf7;
-	color: #141313;
-	text-align: center;
-
-}

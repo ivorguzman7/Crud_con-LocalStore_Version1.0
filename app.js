@@ -24,6 +24,8 @@ form.addEventListener("submit", function (eventoBotonEnviar) {
     salvarDatosEnLocalStorage();
     pintarTabla();
     form.reset();
+  } else {
+    alert("Todos los datos son obligatorios")
   }
 })
 
@@ -38,17 +40,8 @@ function salvarDatosEnLocalStorage() {
 function pintarTabla() {
   tableBody.innerHTML = "";
 
-  // Creando  la estructura y las claces (HTML) (CSS)  de la tabla de datos dinámicament  en el DOM
+  //^  Creando  la estructura y las claces (HTML) (CSS)  de la tabla de datos dinámicament  en el DOM
   datos.forEach(function (elementoIndice, indice) {
-    console.log("datos:");
-    console.log(datos);
-    console.log("indice:");
-    console.log(indice);
-    console.log("elementoIndice:");
-    console.log(elementoIndice);
-
-
-
     const fila = document.createElement("tr");
     fila.classList.add("hover");
     const celdaName = document.createElement("td");
@@ -62,23 +55,27 @@ function pintarTabla() {
     iconoEliminar.className = "fa-solid fa-trash-can";
 
     // cear (poblando en forma dinamica) el  contenido  a las celadas
-    celdaName.innerHTML = '<h1>';
     celdaName.textContent = elementoIndice.name;
     celdaEmail.textContent = elementoIndice.email;
+
+    // ^ _________ boton Editar __________
     botonEditar.textContent = "Editar";
-    console.log(botonEditar.classList)// todo Depuracion
     botonEditar.classList.add("button", "button--editar");
     botonEditar.innerHTML = '<i class="fas fa-edit"></i> Editar';
-    // Agregar evento click al botón de editar para llamar a la función editarDatos 
+   
+    //^ Agregar evento click al botón de editar para llamar a la función editarDatos 
     botonEditar.addEventListener("click", function () {
       editarDatos(indice);
     })
 
 
+    // ^ _________ boton Eliminar__________
     botonEliminar.textContent = "Eliminar";
     botonEliminar.classList.add("button", "button--eliminar");
     botonEliminar.innerHTML = '<i class="fas fa-trash"></i> Borrar';
-    // Agregar evento click al botón  eliminar para llamar a la funcion eliminarDatos  
+
+
+    //^ Agregar evento click al botón  eliminar para llamar a la funcion eliminarDatos  
     botonEliminar.addEventListener("click", function () {
       eliminarDatos(indice);
     })
@@ -87,7 +84,6 @@ function pintarTabla() {
 
     // Agregar botones a la celda de acciones
     celdaAction.appendChild(botonEditar);
-    console.log(celdaAction.appendChild(botonEditar))// todo Depuracion
     celdaAction.appendChild(botonEliminar);
 
     // Agregar celdas a la fila
@@ -100,4 +96,39 @@ function pintarTabla() {
   })
 
 }
+
+function editarDatos(indice) {
+  const editarElementoIndice = datos[indice];
+  nameInput.value = editarElementoIndice.name;
+  emailInput.value = editarElementoIndice.email;
+  datos.splice(indice, 1)
+  salvarDatosEnLocalStorage();
+  pintarTabla();
+
+}
+
+function eliminarDatos(indice) {
+  datos.splice(indice, 1)
+  salvarDatosEnLocalStorage();
+  pintarTabla();
+}
 pintarTabla();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
