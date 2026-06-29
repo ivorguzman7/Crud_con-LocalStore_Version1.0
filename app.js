@@ -62,10 +62,10 @@ function pintarTabla() {
 
 
     
-    // ^ _________ boton Editar __________
+    // ^ _________ boton Actualizar __________
     botonEditar.textContent = "Actualizar";
-    botonEditar.classList.add("button", "button--editar");
-    botonEditar.innerHTML = '<i class="fas fa-edit"></i> Editar';
+    botonEditar.classList.add("button", "button--Actualizar");
+    botonEditar.innerHTML = '<i class="fas fa-edit"></i> Actualiza';
    
     //^ Agregar evento click al botón de editar para llamar a la función editarDatos 
     botonEditar.addEventListener("click", function () {
@@ -76,7 +76,7 @@ function pintarTabla() {
     // ^ _________ boton Eliminar__________
     botonEliminar.textContent = "Eliminar";
     botonEliminar.classList.add("button", "button--eliminar");
-    botonEliminar.innerHTML = '<i class="fas fa-trash"></i> Borrar';
+    botonEliminar.innerHTML = '<i class="fas fa-trash"></i> Elimina';
 
 
     //^ Agregar evento click al botón  eliminar para llamar a la funcion eliminarDatos  
