@@ -39,7 +39,7 @@ function salvarDatosEnLocalStorage() {
 
 function pintarTabla() {
   tableBody.innerHTML = "";
-
+  
   //^  Creando  la estructura y las claces (HTML) (CSS)  de la tabla de datos dinámicament  en el DOM
   // ? datos.forEach(function (elementoIndice, indice) { Funcion Clasica
   datos.forEach((elementoIndice, indice) => { // ?  Funcion flecha ()=>{}
@@ -48,6 +48,7 @@ function pintarTabla() {
     const celdaName = document.createElement("td");
     const celdaEmail = document.createElement("td");
     const celdaAction = document.createElement("td");
+    celdaAction.classList.add("table_body--tdActionCentrado");
     const botonEditar = document.createElement("button");
     const iconoEditar = document.createElement("i");
     iconoEditar.className = "fas fa-edit";
