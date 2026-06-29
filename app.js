@@ -63,7 +63,7 @@ function pintarTabla() {
 
     
     // ^ _________ boton Editar __________
-    botonEditar.textContent = "Editar";
+    botonEditar.textContent = "Actualizar";
     botonEditar.classList.add("button", "button--editar");
     botonEditar.innerHTML = '<i class="fas fa-edit"></i> Editar';
    
