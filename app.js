@@ -41,7 +41,8 @@ function pintarTabla() {
   tableBody.innerHTML = "";
 
   //^  Creando  la estructura y las claces (HTML) (CSS)  de la tabla de datos dinámicament  en el DOM
-  datos.forEach(function (elementoIndice, indice) {
+  // ? datos.forEach(function (elementoIndice, indice) { Funcion Clasica
+  datos.forEach((elementoIndice, indice) => { // ?  Funcion flecha ()=>{}
     const fila = document.createElement("tr");
     fila.classList.add("hover");
     const celdaName = document.createElement("td");
@@ -58,6 +59,8 @@ function pintarTabla() {
     celdaName.textContent = elementoIndice.name;
     celdaEmail.textContent = elementoIndice.email;
 
+
+    
     // ^ _________ boton Editar __________
     botonEditar.textContent = "Editar";
     botonEditar.classList.add("button", "button--editar");
@@ -104,7 +107,6 @@ function editarDatos(indice) {
   datos.splice(indice, 1)
   salvarDatosEnLocalStorage();
   pintarTabla();
-
 }
 
 function eliminarDatos(indice) {
