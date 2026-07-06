@@ -40,9 +40,9 @@ function salvarDatosEnLocalStorage() {
 function pintarTabla() {
   tableBody.innerHTML = "";
   
-  //^  Creando  la estructura y las claces (HTML) (CSS)  de la tabla de datos dinámicament  en el DOM
-  // ? datos.forEach(function (elementoIndice, indice) { Funcion Clasica
-  datos.forEach((elementoIndice, indice) => { // ?  Funcion flecha ()=>{}
+  //! Creando  la estructura y las claces (HTML) (CSS)  de la tabla de datos dinámicament  en el DOM
+  //! datos.forEach(function (elementoIndice, indice) { Funcion Clasica
+  datos.forEach((elementoIndice, indice) => { // !  Funcion flecha ()=>{}
     const fila = document.createElement("tr");
     fila.classList.add("hover");
     const celdaName = document.createElement("td");
@@ -62,24 +62,24 @@ function pintarTabla() {
 
 
     
-    // ^ _________ boton Actualizar __________
+    // ! _________ boton Actualizar gmail __________
     botonEditar.textContent = "Actualizar";
-    botonEditar.classList.add("button", "button--Actualizar");
-    botonEditar.innerHTML = '<i class="fas fa-edit"></i> Actualiza';
+    botonEditar.classList.add("button", "button--Actualizargmail");
+    botonEditar.innerHTML = '<i class="fas fa-edit"></i> Actualiza &raquo';
    
-    //^ Agregar evento click al botón de editar para llamar a la función editarDatos 
+    //! Agregar evento click al botón de editar para llamar a la función editarDatos 
     botonEditar.addEventListener("click", function () {
       editarDatos(indice);
     })
 
 
-    // ^ _________ boton Eliminar__________
+    // ! _________ boton Eliminar__________
     botonEliminar.textContent = "Eliminar";
     botonEliminar.classList.add("button", "button--eliminar");
-    botonEliminar.innerHTML = '<i class="fas fa-trash"></i> Elimina';
+    botonEliminar.innerHTML = '<i class="fas fa-trash"></i> Elimina &raquo';
 
 
-    //^ Agregar evento click al botón  eliminar para llamar a la funcion eliminarDatos  
+    //! Agregar evento click al botón  eliminar para llamar a la funcion eliminarDatos  
     botonEliminar.addEventListener("click", function () {
       eliminarDatos(indice);
     })
