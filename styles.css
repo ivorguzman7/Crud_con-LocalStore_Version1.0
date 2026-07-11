@@ -1,25 +1,64 @@
+/* ------------------------------------------------------------------------------
+📌 IMPORTACIÓN DE FUENTES TIPOGRÁFICAS EXTERNAS
+REGLA CSS: @import
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una directiva de CSS que importa estilos desde otro archivo o URL.
+- ¿Qué hace?: Carga la tipografía premium "Montserrat" directamente desde los servidores de Google Fonts.
+- ¿Cómo lo hace?: Hace una llamada HTTP para descargar el archivo CSS de fuentes con los grosores de letra 400, 500 y 700.
+- ¿Por qué lo hace?: Proporciona al diseño un aspecto tipográfico moderno, elegante y profesional que supera a las fuentes predeterminadas del sistema.
+------------------------------------------------------------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-
 
 /* 
   Stylesheet para aplicacion Basica de CRUD 
   Copyright 2026 Ivor Guzmán Zambrano    
 */
 
+/* ------------------------------------------------------------------------------
+📌 SELECTOR UNIVERSAL (RESET DE ESTILOS)
+SELECTOR: *
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un selector que aplica a todos y cada uno de los elementos HTML de la página.
+- ¿Qué hace?: Establece los márgenes y rellenos internos a 0, y cambia el cálculo del tamaño de cajas a 'border-box'.
+- ¿Cómo lo hace?: 
+    1. 'margin: 0; padding: 0;': Remueve los espaciados por defecto que traen las etiquetas del navegador.
+    2. 'box-sizing: border-box;': Asegura que el ancho (width) y alto (height) de los elementos incluyan el padding y bordes,
+       facilitando enormemente el maquetado.
+- ¿Por qué lo hace?: Para estandarizar el diseño inicial. Si no reseteamos los estilos, la web se verá diferente en Chrome, Firefox o Safari.
+------------------------------------------------------------------------------ */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
+/* ------------------------------------------------------------------------------
+📌 TIPOGRAFÍA PARA ELEMENTOS COMUNES
+SELECTOR: body, button, input
+---------------------------------------------------------------------------------
+- ¿Qué es?: Regla aplicada al cuerpo de la web, botones y campos de entrada de datos.
+- ¿Qué hace?: Configura la tipografía "Montserrat" como fuente principal para estos elementos.
+- ¿Cómo lo hace?: Establece la propiedad 'font-family'. Si Montserrat falla en cargar, el sistema usa 'sans-serif' por defecto.
+- ¿Por qué lo hace?: Mantiene un diseño visual y tipográfico coherente en toda la interfaz de la aplicación.
+------------------------------------------------------------------------------ */
 body,
 button,
 input {
-	font-family: 'Montserrat', san-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
-
-
+/* ------------------------------------------------------------------------------
+📌 ESTILOS PARA CELDAS DE TABLAS
+SELECTOR: td, th
+---------------------------------------------------------------------------------
+- ¿Qué es?: Regla CSS aplicada a las celdas de datos (<td>) y cabeceras (<th>) de las tablas.
+- ¿Qué hace?: Aplica relleno interno (padding), alineación izquierda y bordes verdes a todas las celdas.
+- ¿Cómo lo hace?:
+    1. 'padding: 12px;': Deja espacio libre alrededor del texto dentro de la celda.
+    2. 'text-align: left;': Alinea el contenido hacia el lado izquierdo.
+    3. 'border: 1px solid #07842a;': Dibuja un borde delgado verde oscuro (código hexadecimal #07842a).
+- ¿Por qué lo hace?: Da claridad a los datos de la tabla, impidiendo que el texto de las celdas se junte con los bordes de la tabla.
+------------------------------------------------------------------------------ */
 td,
 th {
 	padding: 12px;
@@ -27,33 +66,142 @@ th {
 	border: 1px solid #07842a;
 }
 
+/* ------------------------------------------------------------------------------
+📌 EFECTO VISUAL DE ZOOM Y ILUMINACIÓN AL PASAR CURSOR POR LAS FILAS
+SELECTOR: table tbody tr.hover:hover
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una regla que utiliza la pseudo-clase ':hover' aplicada a las filas de la tabla que tienen la clase CSS '.hover'.
+- ¿Qué hace?: Cambia el fondo a gris, el texto a blanco, agranda ligeramente la fila y modifica el cursor del ratón.
+- ¿Cómo lo hace?:
+    1. 'background-color: #363736; color: #ffffff;': Cambia los colores de fondo y texto.
+    2. 'cursor: pointer;': Convierte el cursor en la mano de selección.
+    3. 'transform: scale(1.05);': Agranda la fila en un 5% (efecto de zoom).
+    4. 'transition: all 0.2s ease;': Suaviza la transición del efecto durante 0.2 segundos.
+- ¿Por qué lo hace?: Crea una micro-animación premium que le da vida a la página y ayuda al usuario a saber qué registro tiene seleccionado visualmente.
+------------------------------------------------------------------------------ */
 table tbody tr.hover:hover {
 	background-color: #363736;
-		color: #ffffff;
+	color: #ffffff;
 	border: 1px solid #07842a;
 	cursor: pointer;
 	transform: scale(1.05);
 	transition: all 0.2s ease;
-
 }
 
+/* ------------------------------------------------------------------------------
+📌 FONDO VERDE DESTACADO PARA EL FORMULARIO
+SELECTOR: .paddingBackgroundColor0
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una clase CSS diseñada para envolver el formulario.
+- ¿Qué hace?: Pone un fondo de color verde intenso (#0f9d05) y un relleno interior de 10px.
+- ¿Cómo lo hace?: Aplica la propiedad 'background-color' y 'padding' al contenedor seleccionado.
+- ¿Por qué lo hace?: Agrupa de manera visual la zona de inputs para que se diferencie claramente de la tabla y del título.
+------------------------------------------------------------------------------ */
 .paddingBackgroundColor0 {
 	background-color: #0f9d05;
 	padding: 10px;
 }
 
-
+/* ------------------------------------------------------------------------------
+📌 COLOR DE FONDO VERDE CLARO DEL MAIN
+SELECTOR: .backgroundColor1
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS aplicada al contenedor <main>.
+- ¿Qué hace?: Establece un color de fondo verde pastel (#AEA) para todo el recuadro principal.
+- ¿Cómo lo hace?: Modifica la propiedad 'background-color' del contenedor.
+- ¿Por qué lo hace?: Genera un fondo suave y armonioso que sirve de base para el resto de elementos visuales.
+------------------------------------------------------------------------------ */
 .backgroundColor1 {
 	background-color: #AEA;
 }
 
-
+/* ------------------------------------------------------------------------------
+📌 COLOR DE FONDO GRIS CLARO PARA EL ENCABEZADO DE LA TABLA
+SELECTOR: .backgroundColor2
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS asociada al elemento <thead>.
+- ¿Qué hace?: Aplica un fondo gris claro (#f0f0f0) a la fila de títulos de columna.
+- ¿Cómo lo hace?: Sobreescribe el color de fondo de las celdas hijas en el encabezado.
+- ¿Por qué lo hace?: Distingue visualmente el encabezado de las filas de datos de la tabla.
+------------------------------------------------------------------------------ */
 .backgroundColor2 {
 	background-color: #f0f0f0;
 }
 
+/* ------------------------------------------------------------------------------
+📌 CONTENEDOR FLOTANTE PARA EL BUSCADOR
+SELECTOR: .buscador_container
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS que envuelve al input de búsqueda y su lupa.
+- ¿Qué hace?: Centra los elementos y define el contexto relativo para el posicionamiento interno.
+- ¿Cómo lo hace?:
+    1. 'position: relative;': Permite que el icono hijo use posicionamiento absoluto usando este contenedor como referencia.
+    2. 'margin-bottom: 20px;': Deja espacio libre hacia abajo antes de la tabla.
+- ¿Por qué lo hace?: Es esencial para lograr colocar el icono de lupa flotante de manera correcta encima del input de búsqueda.
+------------------------------------------------------------------------------ */
+.buscador_container {
+	position: relative;
+	margin-bottom: 20px;
+	text-align: center;
+}
 
+/* ------------------------------------------------------------------------------
+📌 POSICIONAMIENTO ABSOLUTO DEL ICONO DE LUPA (BUSCADOR)
+SELECTOR: .buscador_icon
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS del elemento de icono de Font Awesome en la búsqueda.
+- ¿Qué hace?: Posiciona el icono exactamente dentro del recuadro del input de búsqueda.
+- ¿Cómo lo hace?:
+    1. 'position: absolute;': Libera el elemento del flujo de cajas y lo posiciona en coordenadas de su contenedor.
+    2. 'left: 36%; top: 50%;': Lo ubica en el centro horizontal y vertical respecto al diseño del input.
+    3. 'transform: translateY(-50%);': Compensa la altura del propio icono para que quede perfectamente centrado en vertical.
+- ¿Por qué lo hace?: Crea el efecto estético de que la lupa está incrustada físicamente dentro del cuadro de texto.
+------------------------------------------------------------------------------ */
+.buscador_icon {
+	position: absolute;
+	left: 36%;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #07842a;
+}
 
+/* ------------------------------------------------------------------------------
+📌 DISEÑO VISUAL DE LA BARRA DE BÚSQUEDA
+SELECTOR: .buscador_input
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase aplicada directamente al <input> de búsqueda.
+- ¿Qué hace?: Le da un ancho de 30%, esquinas redondeadas, borde verde y un margen izquierdo amplio para no tapar el icono.
+- ¿Cómo lo hace?:
+    1. 'width: 30%;': Ajusta el ancho al 30% del contenedor padre.
+    2. 'padding: 12px 15px 12px 40px;': Deja 40px libres a la izquierda (donde flotará la lupa) para que el texto no se encime con ella.
+    3. 'border-radius: 8px; border: 1px solid #07842a;': Define bordes delgados verdes y esquinas suavizadas.
+    4. 'outline: none;': Quita el borde negro por defecto que pone el navegador al hacer click.
+- ¿Por qué lo hace?: Ofrece un diseño limpio, moderno e interactivo para la barra de búsqueda.
+------------------------------------------------------------------------------ */
+.buscador_input {
+	width: 30%;
+	padding: 12px 15px 12px 40px;
+	border: 1px solid #07842a;
+	border-radius: 8px;
+	font-size: 0.9rem;
+	outline: none;
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* ------------------------------------------------------------------------------
+📌 CONTENEDOR GENERAL DE LA INTERFAZ (BOX CONTAINER)
+SELECTOR: .container
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS del elemento principal <main>.
+- ¿Qué hace?: Limita el ancho del sitio web, lo centra y le dibuja un borde verde grueso de 4px.
+- ¿Cómo lo hace?:
+    1. 'max-width: 1300px;': Impide que la aplicación se estire demasiado en pantallas muy anchas.
+    2. 'margin-left: auto; margin-right: auto;': Centra automáticamente la caja en la pantalla.
+    3. 'border: 4px solid #07842a;': Dibuja el marco verde exterior distintivo del CRUD.
+- ¿Por qué lo hace?: Actúa como el lienzo estructurado donde se dibuja de forma ordenada toda la interfaz del CRUD.
+------------------------------------------------------------------------------ */
 .container {
 	max-width: 1300px;
 	margin-top: 40px;
@@ -63,24 +211,72 @@ table tbody tr.hover:hover {
 	border: 4px solid #07842a;
 }
 
+/* ------------------------------------------------------------------------------
+📌 ALINEACIÓN DEL TÍTULO PRINCIPAL
+SELECTOR: .crud__title
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS vinculada al título principal <h1>.
+- ¿Qué hace?: Centra horizontalmente el título principal de la aplicación.
+- ¿Cómo lo hace?: Modifica la alineación del bloque de texto mediante 'text-align: center'.
+- ¿Por qué lo hace?: Estética visual, alineando el título con el centro de la interfaz.
+------------------------------------------------------------------------------ */
 .crud__title {
 	text-align: center;
 }
 
+/* ------------------------------------------------------------------------------
+📌 ESTILOS DE ESTRUCTURA DEL FORMULARIO
+SELECTOR: .crud__form
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS del contenedor del formulario (<form>).
+- ¿Qué hace?: Aplica márgenes externos arriba y abajo de 10px, y centra los elementos de su interior.
+- ¿Cómo lo hace?: Usa 'margin: 10px 0' y la alineación centrada del bloque de texto.
+- ¿Por qué lo hace?: Crea separación respecto al título principal y centra los campos en la interfaz.
+------------------------------------------------------------------------------ */
 .crud__form {
 	margin: 10px 0;
-	text-align: center
+	text-align: center;
 }
 
+/* ------------------------------------------------------------------------------
+📌 CENTRADO EN LÍNEA
+SELECTOR: .centrar
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS aplicada a la caja contenedora de los inputs.
+- ¿Qué hace?: Permite que la caja se comporte en línea pero admita márgenes y rellenos de bloque.
+- ¿Cómo lo hace?: Aplica 'display: inline-block' al elemento del DOM.
+- ¿Por qué lo hace?: Para que la caja se adapte exactamente al ancho de sus elementos internos sin estirarse al 100% de la pantalla.
+------------------------------------------------------------------------------ */
 .centrar {
 	display: inline-block;
 }
 
+/* ------------------------------------------------------------------------------
+📌 ESPACIADO DE INPUTS EN EL FORMULARIO
+SELECTOR: .form__input
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS asignada a los inputs de nombre e email del formulario.
+- ¿Qué hace?: Añade 10px de espacio libre a la derecha de cada input y define el tamaño de letra en 1rem.
+- ¿Cómo lo hace?: Usa 'margin-right: 10px' para empujar al siguiente elemento y 'font-size: 1rem' para el tamaño de letra.
+- ¿Por qué lo hace?: Evita que los inputs de texto aparezcan pegados horizontalmente entre sí.
+------------------------------------------------------------------------------ */
 .form__input {
 	margin-right: 10px;
 	font-size: 1rem;
 }
 
+/* ------------------------------------------------------------------------------
+📌 ESTILO BASE PARA LOS BOTONES
+SELECTOR: .button
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS global para todos los botones de la aplicación.
+- ¿Qué hace?: Define el cursor de mano, bordes delgados negros, esquinas redondeadas, ancho al 100% de su contenedor y márgenes.
+- ¿Cómo lo hace?:
+    1. 'cursor: pointer;': Transforma el cursor en una mano al posicionarse encima del botón.
+    2. 'border: 1px solid #000000; border-radius: 5px;': Bordes redondeados y delgados de color negro.
+    3. 'width: 100%;': Fuerza al botón a tomar todo el ancho disponible de la celda o caja donde se encuentre.
+- ¿Por qué lo hace?: Garantiza que todos los botones compartan características de tamaño e interacción consistentes.
+------------------------------------------------------------------------------ */
 .button {
 	cursor: pointer;
 	padding: 3px;
@@ -89,74 +285,146 @@ table tbody tr.hover:hover {
 	font-weight: 500;
 	margin: 5px 5px 5px 5px;
 	text-align: center;
-	/*max-width: 100%;*/
-		width: 100%;
+	width: 100%;
 }
 
-
+/* ------------------------------------------------------------------------------
+📌 EFECTO VISUAL AL PASAR CURSOR POR BOTONES GENERALES (HOVER)
+SELECTOR: .button:hover
+---------------------------------------------------------------------------------
+- ¿Qué es?: Regla aplicada al pasar el cursor sobre cualquier botón genérico.
+- ¿Qué hace?: Agranda el botón, cambia su fondo a azul, el texto a blanco y engrosa la tipografía.
+- ¿Cómo lo hace?:
+    1. 'transform: scale(1.1);': Agranda el tamaño en un 10% para dar sensación física de botón presionado.
+    2. 'background-color: #008df9; color: #ffffff;': Modifica los colores de fondo y texto a azul y blanco.
+    3. 'font-weight: 1000;': Pone el texto en su grosor máximo.
+- ¿Por qué lo hace?: Mejora notablemente la experiencia de interacción, dándole dinamismo y respuesta a las acciones del usuario.
+------------------------------------------------------------------------------ */
 .button:hover {
-
 	transform: scale(1.1);
 	background-color: #008df9;
 	color: #ffffff;
 	border: 1px solid #000000;
 	font-weight: 1000;
-		max-width: 93%;
+	max-width: 93%;
 }
-.button--fila:hover {
 
+/* ------------------------------------------------------------------------------
+📌 EFECTO VISUAL DE CURSOR EN FILAS DE BOTONES
+SELECTOR: .button--fila:hover
+---------------------------------------------------------------------------------
+- ¿Qué es?: Regla de hover alternativa diseñada para botones dentro de filas.
+- ¿Qué hace?: Limita el ancho del botón al 80% y aplica un zoom ligero al pasar el ratón.
+- ¿Cómo lo hace?: Define el ancho con 'max-width: 80%' y aplica transformación de escala.
+- ¿Por qué lo hace?: Evita que los botones dentro de la tabla adquieran un tamaño incómodo o deformado durante el efecto hover.
+------------------------------------------------------------------------------ */
+.button--fila:hover {
 	transform: scale(1.1);
 	border: 1px solid #000000;
 	max-width: 80%;
 }
 
+/* ------------------------------------------------------------------------------
+📌 ESTILO PARA EL BOTÓN "CREAR" DEL FORMULARIO
+SELECTOR: .button--primary
+---------------------------------------------------------------------------------
+- ¿Qué es?: Modificador de estilo para el botón principal de creación.
+- ¿Qué hace?: Pone un color de fondo verde muy suave (#e6ffea) y texto de color oscuro (#080808).
+- ¿Cómo lo hace?: Sobreescribe la propiedad 'background-color' y 'color' del botón.
+- ¿Por qué lo hace?: Utiliza el color verde como convención universal de interfaz para representar acciones de adición o éxito.
+------------------------------------------------------------------------------ */
 .button--primary {
 	background-color: #e6ffea;
 	color: #080808;
-
 }
 
-
-
-
+/* ------------------------------------------------------------------------------
+📌 ESTILO PARA EL BOTÓN "ACTUALIZAR"
+SELECTOR: .button--Actualizargmail
+---------------------------------------------------------------------------------
+- ¿Qué es?: Modificador de estilo para el botón de edición/actualización.
+- ¿Qué hace?: Establece su ancho en 40%, fondo amarillo (#f2ff02) y margen derecho para separarlo del botón de eliminar.
+- ¿Cómo lo hace?:
+    1. 'width: 40%;': Ajusta el ancho al 40% de la celda de la tabla.
+    2. 'background-color: #f2ff02;': Cambia el fondo a amarillo intenso.
+    3. 'margin-right: 30px;': Separa físicamente este botón del de eliminación adyacente.
+- ¿Por qué lo hace?: El color amarillo representa tradicionalmente la acción de advertencia o edición (cambio) en interfaces.
+------------------------------------------------------------------------------ */
 .button--Actualizargmail {
 	width: 40%;
 	background-color: #f2ff02;
 	color: #080808;
 	margin-right: 30px;
-
 }
 
-
+/* ------------------------------------------------------------------------------
+📌 ESTILO PARA EL BOTÓN "ELIMINAR"
+SELECTOR: .button--eliminar
+---------------------------------------------------------------------------------
+- ¿Qué es?: Modificador de estilo para el botón de borrado de filas.
+- ¿Qué hace?: Establece el ancho al 40%, fondo rojo (#ff0202) y texto de color blanco.
+- ¿Cómo lo hace?: Usa 'width: 40%', 'background-color: #ff0202' y 'color: #ffffff'.
+- ¿Por qué lo hace?: El color rojo indica una acción destructiva irreversible (eliminar), previniendo clics accidentales del usuario.
+------------------------------------------------------------------------------ */
 .button--eliminar {
-
 	width: 40%;
 	background-color: #ff0202;
 	color: #ffffff;
-
 }
 
+/* ------------------------------------------------------------------------------
+📌 ESTRUCTURA GENERAL DE LA TABLA
+SELECTOR: .crud__table
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS de la tabla principal del CRUD.
+- ¿Qué hace?: Fuerza a la tabla a expandirse al 100% de su contenedor y colapsa los bordes dobles de las celdas.
+- ¿Cómo lo hace?:
+    1. 'width: 100%;': Aprovecha todo el ancho del main.
+    2. 'border-collapse: collapse;': Une los bordes de las celdas adyacentes en una sola línea delgada.
+- ¿Por qué lo hace?: Por defecto las tablas HTML muestran bordes dobles con espacios; esta propiedad hace que luzca limpia y profesional.
+------------------------------------------------------------------------------ */
 .crud__table {
-	/*text-align: center;*/
 	width: 100%;
 	border-collapse: collapse;
-
 }
 
-
+/* ------------------------------------------------------------------------------
+📌 BORDES Y RELLENO GENERAL DE TABLAS
+SELECTOR: .table__header, .table_body
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clases CSS compartidas para los bordes y rellenos de las secciones de la tabla.
+- ¿Qué hace?: Dibuja los bordes verdes y da 8px de relleno a las filas y columnas.
+- ¿Cómo lo hace?: Usa 'border: 1px solid #07842a' y 'padding: 8px'.
+- ¿Por qué lo hace?: Asegura uniformidad estética en los bordes y márgenes internos de la tabla.
+------------------------------------------------------------------------------ */
 .table__header,
 .table_body {
 	border: 1px solid #07842a;
 	padding: 8px;
-	
-}
-.table__header{
-text-align:center ;
-
 }
 
-.table_body--tdActionCentrado{
-text-align: center;
-	/*	padding-left: 130px;
-				padding-right: 130px;*/
+/* ------------------------------------------------------------------------------
+📌 ALINEACIÓN DE LOS ENCABEZADOS DE LA TABLA
+SELECTOR: .table__header
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS asignada a las celdas <th> de encabezado de columna.
+- ¿Qué hace?: Centra horizontalmente los textos de los encabezados (Name, Email, Action).
+- ¿Cómo lo hace?: Cambia la propiedad 'text-align' del bloque a 'center'.
+- ¿Por qué lo hace?: Presenta los nombres de las columnas alineados simétricamente con sus contenidos de abajo.
+------------------------------------------------------------------------------ */
+.table__header {
+	text-align: center;
+}
+
+/* ------------------------------------------------------------------------------
+📌 CENTRADO DE ACCIONES EN CELDAS DE REGISTRO
+SELECTOR: .table_body--tdActionCentrado
+---------------------------------------------------------------------------------
+- ¿Qué es?: Clase CSS asignada a las celdas de acciones (<td>) inyectadas dinámicamente.
+- ¿Qué hace?: Centra horizontalmente los botones de Editar y Eliminar dentro de la columna Action.
+- ¿Cómo lo hace?: Llama al alineador 'text-align: center'.
+- ¿Por qué lo hace?: Para mantener centrados los controles de botón dentro de cada fila del CRUD, logrando simetría en el diseño.
+------------------------------------------------------------------------------ */
+.table_body--tdActionCentrado {
+	text-align: center;
 }

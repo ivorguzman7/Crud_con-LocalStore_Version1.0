@@ -1,43 +1,369 @@
 <!DOCTYPE html>
+<!-- ----------------------------------------------------------------------------
+📌 DECLARACIÓN DEL TIPO DE DOCUMENTO
+ETIQUETA: <!DOCTYPE html>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una instrucción especial (no es una etiqueta HTML propiamente dicha) que se coloca en la primera línea.
+- ¿Qué hace?: Le indica al navegador web que el documento debe interpretarse bajo el estándar de HTML5.
+- ¿Cómo lo hace?: Activa el modo estándar del navegador (Standard Mode) en lugar del modo de compatibilidad (Quirks Mode).
+- ¿Por qué lo hace?: Garantiza que el navegador renderice la página correctamente utilizando las reglas modernas de diseño y APIs.
+----------------------------------------------------------------------------- -->
+
 <html lang="es">
- <!--
-  html para aplicacion Basica de CRUD 
-  Copyright 2026 Ivor Guzmán Zambrano    
--->
+<!-- ----------------------------------------------------------------------------
+📌 NODO RAÍZ DEL DOCUMENTO HTML
+ETIQUETA: <html lang="es">
+---------------------------------------------------------------------------------
+- ¿Qué es?: El elemento contenedor principal de todo el documento HTML. El atributo 'lang="es"' especifica el idioma principal.
+- ¿Qué hace?: Envuelve todo el contenido del sitio web y le comunica al navegador y buscadores que el contenido está en español.
+- ¿Cómo lo hace?: Los motores de búsqueda y lectores de pantalla leen el atributo 'lang' para adaptar la pronunciación o traducción.
+- ¿Por qué lo hace?: Es una buena práctica para la accesibilidad web y el SEO (optimización en buscadores).
+----------------------------------------------------------------------------- -->
+
+   <!--
+     html para aplicacion Basica de CRUD 
+     Copyright 2026 Ivor Guzmán Zambrano    
+   -->
+
    <head>
+<!-- ----------------------------------------------------------------------------
+📌 CABECERA DEL DOCUMENTO HTML
+ETIQUETA: <head>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Contenedor de metadatos, hojas de estilo y scripts que no se muestran directamente en el área visible de la página.
+- ¿Qué hace?: Proporciona al navegador información técnica de configuración, enlaces a estilos y títulos del sitio.
+- ¿Cómo lo hace?: Almacena etiquetas como <meta>, <link>, <title>, las cuales se procesan antes de dibujar la página.
+- ¿Por qué lo hace?: Para cargar la configuración técnica, fuentes y estilos antes de que el usuario vea el cuerpo de la página.
+----------------------------------------------------------------------------- -->
+
       <meta charset="utf-8" />
+<!-- ----------------------------------------------------------------------------
+📌 CODIFICACIÓN DE CARACTERES
+ETIQUETA: <meta charset="utf-8" />
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una etiqueta de metadatos que especifica la codificación de caracteres.
+- ¿Qué hace?: Configura la página para usar la codificación de caracteres universal UTF-8.
+- ¿Cómo lo hace?: Le indica al navegador que decodifique los bytes usando UTF-8, que incluye soporte para casi todos los caracteres del mundo.
+- ¿Por qué lo hace?: Evita problemas de visualización con caracteres especiales, acentos (tildes), la letra "ñ" y símbolos propios del español.
+----------------------------------------------------------------------------- -->
+
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ----------------------------------------------------------------------------
+📌 CONFIGURACIÓN DE PÁGINA PARA DISPOSITIVOS MÓVILES (DISEÑO RESPONSIVO)
+ETIQUETA: <meta name="viewport" ...>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un metadato de control del viewport (área visible del navegador).
+- ¿Qué hace?: Configura el tamaño del área visible para adaptarse al ancho de pantalla del dispositivo con un zoom inicial de 100%.
+- ¿Cómo lo hace?: 'width=device-width' establece el ancho de la página igual al ancho del dispositivo; 'initial-scale=1.0' define la escala inicial.
+- ¿Por qué lo hace?: Es crucial para el diseño responsivo (responsive design), evitando que la web se vea diminuta en smartphones.
+----------------------------------------------------------------------------- -->
+
       <meta name="generator" content="Geany 2.1" />
+<!-- ----------------------------------------------------------------------------
+📌 CONFIGURACIÓN DEL GENERADOR DE CÓDIGO
+ETIQUETA: <meta name="generator" ...>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un metadato informativo que indica la herramienta de desarrollo utilizada.
+- ¿Qué hace?: Declara al navegador u otros analizadores que la página se creó o editó en el entorno de desarrollo Geany 2.1.
+- ¿Cómo lo hace?: El navegador lee el atributo 'content' pero no altera en nada la presentación visual de la página.
+- ¿Por qué lo hace?: Con fines estadísticos o de documentación interna sobre la herramienta con la que se programó la estructura.
+----------------------------------------------------------------------------- -->
+
       <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">-->
+
       <link rel="stylesheet" href="assets\css\all.min.css">
-   <link rel="stylesheet" href="styles.css">
-   <title>Crud con persistencia LocalStore_YOUTUBE</title>
+<!-- ----------------------------------------------------------------------------
+📌 ENLACE A LOS ICONOS DE FONT AWESOME
+ETIQUETA: <link rel="stylesheet" href="assets\css\all.min.css">
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una etiqueta de enlace externo ('<link>') que vincula un archivo de hojas de estilo (CSS).
+- ¿Qué hace?: Carga la librería local Font Awesome para poder usar iconos en los botones (como el lápiz de editar o el basurero).
+- ¿Cómo lo hace?: Realiza una petición GET para cargar las clases de iconos CSS que están guardadas en la carpeta 'assets\css\'.
+- ¿Por qué lo hace?: Permite añadir iconos premium a la interfaz sin necesidad de usar imágenes pesadas de mapa de bits (JPG/PNG).
+----------------------------------------------------------------------------- -->
+
+      <link rel="stylesheet" href="styles.css">
+<!-- ----------------------------------------------------------------------------
+📌 ENLACE A LOS ESTILOS PROPIOS DE LA APLICACIÓN
+ETIQUETA: <link rel="stylesheet" href="styles.css">
+---------------------------------------------------------------------------------
+- ¿Qué es?: Etiqueta de enlace externo que vincula la hoja de estilos personalizada de nuestra aplicación.
+- ¿Qué hace?: Aplica los estilos visuales (colores, márgenes, alineación, tablas) definidos en el archivo 'styles.css'.
+- ¿Cómo lo hace?: El navegador descarga el archivo y mapea las reglas CSS con las clases e IDs del documento HTML.
+- ¿Por qué lo hace?: Mantiene separada la estructura (HTML) de la presentación y diseño visual (CSS), facilitando el mantenimiento.
+----------------------------------------------------------------------------- -->
+
+      <title>CRUD con persistencia de datos (LocalStore)</title>
+<!-- ----------------------------------------------------------------------------
+📌 TÍTULO DE LA PÁGINA WEB
+ETIQUETA: <title>
+---------------------------------------------------------------------------------
+- ¿Qué es?: El elemento que define el título de la página web.
+- ¿Qué hace?: Muestra el texto especificado en la pestaña del navegador y es el título principal utilizado por motores de búsqueda.
+- ¿Cómo lo hace?: El navegador lee el contenido textual interno de la etiqueta y actualiza el título de la pestaña del sistema.
+- ¿Por qué lo hace?: Es fundamental para el SEO y para que el usuario pueda identificar y volver a la pestaña entre varias abiertas.
+----------------------------------------------------------------------------- -->
+
    </head>
 
    <body>
+<!-- ----------------------------------------------------------------------------
+📌 CUERPO PRINCIPAL DEL DOCUMENTO
+ETIQUETA: <body>
+---------------------------------------------------------------------------------
+- ¿Qué es?: El elemento contenedor de todo el contenido visual y accesible para el usuario.
+- ¿Qué hace?: Aloja todos los componentes de la interfaz de usuario: títulos, tablas, formularios, botones y scripts de interacción.
+- ¿Cómo lo hace?: Sirve como el contenedor raíz del cuerpo del DOM que el motor del navegador dibuja en la pantalla.
+- ¿Por qué lo hace?: Alberga los elementos de la interfaz interactiva sobre los cuales el usuario operará.
+----------------------------------------------------------------------------- -->
+
       <main class="container backgroundColor1">
+<!-- ----------------------------------------------------------------------------
+📌 CONTENEDOR ESTRUCTURAL PRINCIPAL (SEMÁNTICO)
+ETIQUETA: <main class="container backgroundColor1">
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una etiqueta semántica de HTML5 que define el bloque de contenido central del documento.
+- ¿Qué hace?: Agrupa el área del CRUD. Utiliza las clases CSS 'container' (márgenes y ancho máximo) y 'backgroundColor1' (color verde claro).
+- ¿Cómo lo hace?: Agrupa la sección de datos y le da estilos específicos de color y estructura en base a selectores de CSS.
+- ¿Por qué lo hace?: Promueve el HTML semántico (útil para accesibilidad y SEO) y actúa como caja contenedora para el diseño.
+----------------------------------------------------------------------------- -->
+
          <section>
+<!-- ----------------------------------------------------------------------------
+📌 SECCIÓN GENERAL DE CONTENIDO (SEMÁNTICA)
+ETIQUETA: <section>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una etiqueta semántica de HTML5 que agrupa contenido relacionado de manera lógica.
+- ¿Qué hace?: Empaqueta la sección del CRUD (formulario, buscador y tabla de datos).
+- ¿Cómo lo hace?: Define una sección autónoma dentro del flujo del DOM.
+- ¿Por qué lo hace?: Organiza el documento de manera lógica facilitando la lectura del código por herramientas de accesibilidad.
+----------------------------------------------------------------------------- -->
+
             <h1 class="crud__title">CRUD con persistencia de datos (LocalStore)</h1>
+<!-- ----------------------------------------------------------------------------
+📌 TÍTULO DE NIVEL 1 (ENCABEZADO PRINCIPAL)
+ETIQUETA: <h1 class="crud__title">
+---------------------------------------------------------------------------------
+- ¿Qué es?: La etiqueta de encabezado de mayor importancia jerárquica en el documento.
+- ¿Qué hace?: Muestra el título principal "CRUD con persistencia de datos (LocalStore)" centrado en la parte superior.
+- ¿Cómo lo hace?: Usa la clase CSS 'crud__title' para centrar el texto. Los motores de búsqueda lo identifican como el tema clave de la página.
+- ¿Por qué lo hace?: Define claramente el propósito del sitio y cumple con la regla SEO de tener exactamente un h1 por página.
+----------------------------------------------------------------------------- -->
+
             <br>
-            <form action="#" id="formRegister" class="crud__form ">
+<!-- ----------------------------------------------------------------------------
+📌 SALTO DE LÍNEA SIMPLE
+ETIQUETA: <br>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una etiqueta de auto-cierre para realizar un salto de línea en el texto.
+- ¿Qué hace?: Empuja visualmente los elementos de abajo una línea hacia abajo.
+- ¿Cómo lo hace?: Genera un salto de carro en el flujo en bloque del navegador.
+- ¿Por qué lo hace?: Para crear separación espacial simple y directa entre el título h1 y el formulario.
+----------------------------------------------------------------------------- -->
+
+            <form action="#" id="formRegister" class="crud__form">
+<!-- ----------------------------------------------------------------------------
+📌 FORMULARIO DE CAPTURA DE DATOS
+ETIQUETA: <form action="#" id="formRegister" class="crud__form">
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una estructura de formulario HTML para recolectar información del usuario.
+- ¿Qué hace?: Agrupa los campos de entrada de nombre y email y el botón para enviarlos.
+- ¿Cómo lo hace?:
+    1. 'action="#"': Evita enviar los datos a un servidor externo (hace referencia a la misma página).
+    2. 'id="formRegister"': ID exclusivo para que JavaScript escuche su evento 'submit'.
+    3. 'class="crud__form"': Aplica estilos de centrado.
+- ¿Por qué lo hace?: Proporciona un entorno estructurado para recolectar datos y poder detectar cuándo el usuario desea guardar.
+----------------------------------------------------------------------------- -->
+
                <div class="centrar paddingBackgroundColor0">
-                  <input type"text" placeholder="Name" id="nameInput" class="form__input">
-                  <input type"email" placeholder="Email" id="emailInput" class="form__input">
+<!-- ----------------------------------------------------------------------------
+📌 CONTENEDOR INTERNO DE FORMULARIO CON ESTILO
+ETIQUETA: <div class="centrar paddingBackgroundColor0">
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un contenedor genérico en bloque (<div>) con clases CSS específicas.
+- ¿Qué hace?: Centra los campos de entrada y les aplica un fondo verde con relleno (padding) de 10px.
+- ¿Cómo lo hace?: Combina la clase 'centrar' (display inline-block) y 'paddingBackgroundColor0' (color verde oscuro y espaciado).
+- ¿Por qué lo hace?: Crea una caja de color contrastante que agrupa visualmente los campos de entrada.
+----------------------------------------------------------------------------- -->
+
+                  <input type="text" placeholder="Name" id="nameInput" class="form__input">
+<!-- ----------------------------------------------------------------------------
+📌 CAMPO DE ENTRADA PARA EL NOMBRE
+ETIQUETA: <input type="text" ...>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un elemento de formulario de entrada de tipo texto.
+- ¿Qué hace?: Permite al usuario escribir su nombre. Muestra la palabra "Name" de fondo de manera translúcida.
+- ¿Cómo lo hace?: 
+    1. 'type="text"': Define el formato como texto plano.
+    2. 'placeholder="Name"': Muestra la sugerencia visual.
+    3. 'id="nameInput"': Sirve de enlace para JavaScript.
+- ¿Por qué lo hace?: Para recopilar y almacenar el nombre de la persona que se registrará en el sistema.
+----------------------------------------------------------------------------- -->
+
+                  <input type="email" placeholder="Email" id="emailInput" class="form__input">
+<!-- ----------------------------------------------------------------------------
+📌 CAMPO DE ENTRADA PARA EL CORREO ELECTRÓNICO
+ETIQUETA: <input type="email" ...>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un elemento de entrada de formulario de tipo email.
+- ¿Qué hace?: Permite escribir el correo electrónico del usuario y lo valida a nivel básico del navegador.
+- ¿Cómo lo hace?: 
+    1. 'type="email"': Comprueba que el texto tenga el formato básico de un correo (como tener una '@' y un dominio).
+    2. 'placeholder="Email"': Pone la sugerencia textual.
+    3. 'id="emailInput"': Facilita su lectura en JavaScript.
+- ¿Por qué lo hace?: Para asegurar que el dato ingresado en este campo sea de tipo correo electrónico y poder guardarlo.
+----------------------------------------------------------------------------- -->
+
                   <br><br>
-                  <button type="submit" id="submitButton" class="button button--primary"><i class="fas fa-plus"> ::before </i>
-                     Crear</button>
+<!-- ----------------------------------------------------------------------------
+📌 DOBLE SALTO DE LÍNEA
+ETIQUETAS: <br><br>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Dos saltos de línea consecutivos.
+- ¿Qué hace?: Deja un espacio de dos líneas en blanco.
+- ¿Cómo lo hace?: Genera dos saltos de línea sucesivos en el motor de renderizado.
+- ¿Por qué lo hace?: Separa visualmente los campos de texto del botón "Crear" para que el formulario no se vea apretado.
+----------------------------------------------------------------------------- -->
+
+                  <button type="submit" id="submitButton" class="button button--primary">
+                     <i class="fas fa-plus">::before </i> Crear
+                  </button>
+<!-- ----------------------------------------------------------------------------
+📌 BOTÓN DE ENVÍO DE FORMULARIO (CREAR)
+ETIQUETA: <button type="submit" ...>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un botón de tipo "submit" que envía el formulario.
+- ¿Qué hace?: Al presionarse, desencadena el evento "submit" del formulario. Contiene el icono de suma (+) y la palabra "Crear".
+- ¿Cómo lo hace?: 
+    1. 'type="submit"': Indica al navegador que dispare el flujo de envío del formulario.
+    2. 'class="button button--primary"': Estiliza el botón con clases personalizadas de CSS.
+    3. '<i class="fas fa-plus">': Inserta un icono del catálogo Font Awesome.
+- ¿Por qué lo hace?: Es el interruptor visual con el que el usuario confirma y guarda la información escrita en los inputs.
+----------------------------------------------------------------------------- -->
+
                </div>
             </form>
+
+            <div class="buscador_container">
+<!-- ----------------------------------------------------------------------------
+📌 CONTENEDOR DE LA BARRA DE BÚSQUEDA
+ETIQUETA: <div class="buscador_container">
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un contenedor genérico que encapsula el input de búsqueda y su icono correspondiente.
+- ¿Qué hace?: Permite agrupar y posicionar el icono de lupa de manera absoluta sobre la barra de búsqueda.
+- ¿Cómo lo hace?: Usa la clase CSS 'buscador_container' con posicionamiento relativo para que el icono absoluto se alinee con el input.
+- ¿Por qué lo hace?: Para darle una presentación limpia y moderna al buscador, colocando el icono dentro del campo de texto.
+----------------------------------------------------------------------------- -->
+
+               <i class="fas fa-search buscador_icon"></i>
+<!-- ----------------------------------------------------------------------------
+📌 ICONO DE BÚSQUEDA (LUPA)
+ETIQUETA: <i class="fas fa-search buscador_icon"></i>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un elemento de icono utilizando la tipografía de Font Awesome.
+- ¿Qué hace?: Muestra el icono de una lupa para representar visualmente la acción de búsqueda.
+- ¿Cómo lo hace?: El navegador lee las clases 'fas fa-search' y dibuja el glifo correspondiente de la fuente cargada.
+- ¿Por qué lo hace?: Ayuda al usuario a identificar instantáneamente que el campo de texto adyacente sirve para realizar búsquedas.
+----------------------------------------------------------------------------- -->
+
+               <input type="text" id="searchInput" class="buscador_input" placeholder="Buscar por nombre o correo...">
+<!-- ----------------------------------------------------------------------------
+📌 CAMPO DE ENTRADA PARA FILTRAR DATOS (BUSCADOR)
+ETIQUETA: <input type="text" id="searchInput" ...>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un elemento de entrada de texto asociado a la funcionalidad de búsqueda.
+- ¿Qué hace?: Captura el texto que escribe el usuario para filtrar la tabla en tiempo real.
+- ¿Cómo lo hace?: 
+    1. 'id="searchInput"': Permite a JavaScript escuchar su evento 'input'.
+    2. 'class="buscador_input"': Aplica estilos visuales de tamaño y espaciado para que coincida con el icono de lupa.
+- ¿Por qué lo hace?: Permite filtrar de forma dinámica registros en tablas con gran volumen de información.
+----------------------------------------------------------------------------- -->
+
+            </div>
+
             <br>
+
             <table class="crud__table">
+<!-- ----------------------------------------------------------------------------
+📌 ESTRUCTURA DE TABLA DE DATOS
+ETIQUETA: <table class="crud__table">
+---------------------------------------------------------------------------------
+- ¿Qué es?: El elemento principal para declarar una tabla de datos bidimensional en HTML.
+- ¿Qué hace?: Organiza la información en filas y columnas. Aplica estilos mediante la clase 'crud__table'.
+- ¿Cómo lo hace?: Contiene un encabezado (<thead>) y un cuerpo de datos (<tbody>).
+- ¿Por qué lo hace?: Es la forma semántica y ordenada por excelencia en HTML para presentar listados tabulados.
+----------------------------------------------------------------------------- -->
+
                <thead class="backgroundColor2">
+<!-- ----------------------------------------------------------------------------
+📌 CABECERA DE LA TABLA
+ETIQUETA: <thead class="backgroundColor2">
+---------------------------------------------------------------------------------
+- ¿Qué es?: Sección que agrupa las celdas de encabezado de una tabla.
+- ¿Qué hace?: Define los nombres de las columnas. Tiene un color de fondo gris claro gracias a 'backgroundColor2'.
+- ¿Cómo lo hace?: Mapea la estructura y define la primera fila de la tabla como descriptores.
+- ¿Por qué lo hace?: Separa visualmente los títulos de los datos para facilitar la lectura de la información.
+----------------------------------------------------------------------------- -->
+
                   <tr>
+<!-- ----------------------------------------------------------------------------
+📌 FILA DE ENCABEZADO
+ETIQUETA: <tr>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Un elemento de fila de tabla (Table Row).
+- ¿Qué hace?: Agrupa las celdas que definen las columnas de la cabecera.
+- ¿Cómo lo hace?: Sirve como contenedor horizontal de los elementos <th>.
+- ¿Por qué lo hace?: Estructura los nombres de las columnas en una sola línea horizontal.
+----------------------------------------------------------------------------- -->
+
                      <th class="table__header">Name</th>
+<!-- ----------------------------------------------------------------------------
+📌 COLUMNA: NOMBRE
+ETIQUETA: <th class="table__header">Name</th>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Celda de cabecera de tabla (Table Header).
+- ¿Qué hace?: Declara que la primera columna de la tabla mostrará los nombres de los usuarios.
+- ¿Cómo lo hace?: El navegador le aplica por defecto un estilo en negrita y alineación centrada.
+- ¿Por qué lo hace?: Identifica el tipo de dato que se encuentra en la columna respectiva.
+----------------------------------------------------------------------------- -->
+
                      <th class="table__header">Email</th>
+<!-- ----------------------------------------------------------------------------
+📌 COLUMNA: EMAIL
+ETIQUETA: <th class="table__header">Email</th>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Celda de encabezado de columna.
+- ¿Qué hace?: Indica que la segunda columna mostrará los correos electrónicos de los usuarios.
+- ¿Cómo lo hace?: Define el encabezado de la columna de emails.
+- ¿Por qué lo hace?: Para estructurar e identificar la columna del correo electrónico.
+----------------------------------------------------------------------------- -->
+
                      <th class="table__header">Action</th>
+<!-- ----------------------------------------------------------------------------
+📌 COLUMNA: ACCIONES (EDITAR/ELIMINAR)
+ETIQUETA: <th class="table__header">Action</th>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Celda de encabezado de columna de acciones.
+- ¿Qué hace?: Informa que la tercera columna estará destinada a los botones de Editar y Eliminar de cada fila.
+- ¿Cómo lo hace?: Define la cabecera de la columna de control.
+- ¿Por qué lo hace?: Para agrupar los botones de acción del CRUD bajo un título claro de columna.
+----------------------------------------------------------------------------- -->
+
                   </tr>
                </thead>
                <tbody id="tableBody" class="table__body"></tbody>
+<!-- ----------------------------------------------------------------------------
+📌 CUERPO DINÁMICO DE LA TABLA
+ETIQUETA: <tbody id="tableBody" class="table__body">
+---------------------------------------------------------------------------------
+- ¿Qué es?: El elemento que agrupa el contenido principal (filas de datos) de la tabla. Está vacío inicialmente en el HTML.
+- ¿Qué hace?: Recibe las filas dinámicas (<tr>) insertadas a través de JavaScript al ejecutarse la función 'pintarTabla()'.
+- ¿Cómo lo hace?: 
+    1. 'id="tableBody"': Permite que JavaScript lo identifique en el DOM y escriba en él.
+    2. 'class="table__body"': Aplica estilos de bordes.
+- ¿Por qué lo hace?: Para servir de contenedor dinámico que poblará visualmente la lista de usuarios en tiempo real.
+----------------------------------------------------------------------------- -->
+
             </table>
          </section>
 
@@ -45,6 +371,25 @@
 
    </body>
    <script src="app.js"></script>
+<!-- ----------------------------------------------------------------------------
+📌 SCRIPT LÓGICO DE LA APLICACIÓN
+ETIQUETA: <script src="app.js"></script>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Una etiqueta de importación de JavaScript externo.
+- ¿Qué hace?: Carga y ejecuta el código lógico de nuestra aplicación contenido en el archivo 'app.js'.
+- ¿Cómo lo hace?: Realiza la descarga y ejecución síncrona en el navegador una vez cargada la estructura HTML.
+- ¿Por qué lo hace?: Proporciona la interactividad y lógica del CRUD (lectura de datos, eventos click, guardado en almacenamiento).
+----------------------------------------------------------------------------- -->
+
    <script src="assets\js\all.min.js"></script>
+<!-- ----------------------------------------------------------------------------
+📌 SCRIPT DE LA LIBRERÍA FONT AWESOME
+ETIQUETA: <script src="assets\js\all.min.js"></script>
+---------------------------------------------------------------------------------
+- ¿Qué es?: Etiqueta que importa el archivo de JavaScript de Font Awesome.
+- ¿Qué hace?: Permite la carga e inicialización de gráficos vectoriales SVG e iconos tipográficos de manera interactiva en la web.
+- ¿Cómo lo hace?: Carga la librería local del directorio 'assets\js\'.
+- ¿Por qué lo hace?: Respalda la correcta visualización de los iconos utilizados en los botones del CRUD.
+----------------------------------------------------------------------------- -->
 
 </html>
