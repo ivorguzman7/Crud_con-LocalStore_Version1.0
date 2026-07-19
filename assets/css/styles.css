@@ -90,16 +90,17 @@ table tbody tr.resaltado:hover {
 
 /* ------------------------------------------------------------------------------
 📌 FONDO VERDE DESTACADO PARA EL FORMULARIO
-SELECTOR: .rellenoColorFondo0
+SELECTOR: .rellenoColorFondo
 ---------------------------------------------------------------------------------
 - ¿Qué es?: Una clase CSS diseñada para envolver el formulario.
 - ¿Qué hace?: Pone un fondo de color verde intenso (#0f9d05) y un relleno interior de 10px.
 - ¿Cómo lo hace?: Aplica la propiedad 'background-color' y 'padding' al contenedor seleccionado.
 - ¿Por qué lo hace?: Agrupa de manera visual la zona de campos de entrada para que se diferencie claramente de la tabla y del título.
 ------------------------------------------------------------------------------ */
-.rellenoColorFondo0 {
-	background-color: #0f9d05;
+.rellenoColorFondo{
+	background-color: #2d8420;
 	padding: 10px;
+	border: 2px solid #effbf2;
 }
 
 /* ------------------------------------------------------------------------------
@@ -159,10 +160,10 @@ SELECTOR: .buscador_icono
 ------------------------------------------------------------------------------ */
 .buscador_icono {
 	position: absolute;
-	left: 36%;
-	top: 50%;
+	left: 12%;
+	top: 47%;
 	transform: translateY(-50%);
-	color: #07842a;
+	color: #060606;
 }
 
 /* ------------------------------------------------------------------------------
@@ -179,7 +180,7 @@ SELECTOR: .buscador_entrada
 - ¿Por qué lo hace?: Ofrece un diseño limpio, moderno e interactivo para la barra de búsqueda.
 ------------------------------------------------------------------------------ */
 .buscador_entrada {
-	width: 30%;
+	width: 80%;
 	padding: 12px 15px 12px 40px;
 	border: 1px solid #07842a;
 	border-radius: 8px;
