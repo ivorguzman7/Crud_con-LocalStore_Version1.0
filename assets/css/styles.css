@@ -164,6 +164,7 @@ SELECTOR: .buscador_icono
 	top: 47%;
 	transform: translateY(-50%);
 	color: #060606;
+	font-weight: large;
 }
 
 /* ------------------------------------------------------------------------------
