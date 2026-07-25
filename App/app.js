@@ -260,7 +260,7 @@ function guardarDatosEnAlmacenamiento() {
   //     1. 'JSON.stringify(datos)': Serializa el arreglo de JavaScript a formato de texto JSON.
   //     2. 'localStorage.setItem(clave, valor)': Guarda ese texto en el almacenamiento físico del navegador web.
   // - ¿Por qué lo hace?: LocalStorage solo acepta almacenar texto simple (Strings). Es obligatorio convertir el arreglo
-  //                      a texto antes de guardarlo, de lo contrario no se almacenaría de forma correcta.
+  // a texto antes de guardarlo, de lo contrario no se almacenaría de forma correcta.
   localStorage.setItem("DatosFormulario", JSON.stringify(datos));
 }
 
